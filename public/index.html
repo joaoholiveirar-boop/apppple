@@ -557,7 +557,7 @@ html, body {
   <div class="footer-logo">
     <img src="https://hyken.com/wp-content/uploads/2023/01/Apple-TV-Logo-2019-present.png" alt="Apple TV Logo">
   </div>
-  <p>Copyright © 2023 Apple Inc. Todos os direitos reservados.</p>
+  <p>Copyright © 2026 Apple Inc. Todos os direitos reservados.</p>
   <p>Conteúdos exclusivos disponíveis no Apple TV+</p>
 </footer>
 
@@ -575,14 +575,23 @@ const postsData = [
     action: "abrirPopupCBS"
   },
   {
+    const postsData = [
+  {
     id: 2,
     title: "NBA All-Star Halftime Show Louise",
     description: "Louise apresenta show histórico no intervalo do NBA All-Star Game.",
     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX_x5vkq65cDMXsp5-Mwdf9CvReUI9cKiJOEcuZplLmQktIVP2a-of9cUxrjz6H-mmlZjGx9Il9OhZRG4UtmdgnhpVv-opRoT9rXWTQcKOtdD45njyKSZAFHJjzFKixuFylSOIz12UbU-B6xdmQjcNzKrJmERnm9hsdiZSpmzsmUxt4fIdyRtBx38LYyJw/s2100/alltst.png",
     date: "2023-11-20",
     duration: "1h 45min",
-    link: "pages/nbalouise.html",
+    link: "/post/nba-louise.html",  // ✅ CORRIGIDO!
     action: "irParaNbaLouise"
+  }
+];
+
+// FUNÇÃO CORRETA:
+function irParaNbaLouise() {
+  window.location.href = "/post/nba-louise.html";  // ✅ MESMO LINK
+}
   },
   {
     id: 3,
@@ -703,5 +712,6 @@ document.getElementById('cbsPopup').addEventListener('click', function(e) {
 </script>
 </body>
 </html>
+
 
 
