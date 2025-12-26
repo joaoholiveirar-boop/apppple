@@ -564,8 +564,15 @@ html, body {
 <script>
 // Dados dos posts (em produção, viriam de uma API)
 const postsData = [
-
-  
+  {
+    id: 1,
+    title: "Lady Gaga Halftime Show",
+    description: "Performance exclusiva da Lady Gaga no Apple Music Fenty Bowl.",
+    image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX9P2j2MjIjIzkO-yNB3HtENFWk2dp2DE_ripgV5okgFZcc5Al5czn3H61sGZfouOj6Lv0nV7nxMCbIRjz-Ye93NsOBsRrCgmOy10rQj7JjsIY64aLwAGw4skd-kTR9hlHYJzJzmofcav_ww9nlRWHwOjWhm51nWOPV4X4Jd6Vd_xQCO8H5GGVBxKrjp_P/s2100/poster.png",
+    date: "2023-10-15",
+    duration: "1h 30min",
+    link: "/post/lady-gaga",
+    action: "abrirPopupCBS"
   },
   {
     id: 2,
@@ -576,11 +583,9 @@ const postsData = [
     duration: "1h 45min",
     link: "/post/nba-louise",
     action: "irParaNbaLouise"
-
   }
 ];
 
-  
 // Função para renderizar posts
 function renderPosts() {
   const postsGrid = document.getElementById('postsGrid');
@@ -677,6 +682,4 @@ document.getElementById('cbsPopup').addEventListener('click', function(e) {
 });
 </script>
 </body>
-
 </html>
-
