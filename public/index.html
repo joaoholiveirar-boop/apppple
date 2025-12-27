@@ -494,17 +494,17 @@ html, body {
   </div>
 </div>
 
-<!-- HEADER -->
+<!-- HEADER ATUALIZADO -->
 <header class="apple-header">
   <div class="apple-logo">
     <img src="https://hyken.com/wp-content/uploads/2023/01/Apple-TV-Logo-2019-present.png" alt="Apple TV Logo">
   </div>
   
-  <!-- MENU ATUALIZADO -->
+  <!-- MENU ATUALIZADO COM LINKS CORRETOS -->
   <nav class="apple-nav">
-    <a href="/" class="active">Início</a>
-    <a href="/live">Live</a>
-    <a href="/posts">Posts</a>
+    <a href="index.html" class="active">Início</a>
+    <a href="live.html">Live</a>
+    <a href="posts.html">Posts</a>
   </nav>
   
   <div class="apple-actions">
@@ -542,7 +542,7 @@ html, body {
 <section class="posts-section" id="posts">
   <div class="section-header">
     <h2 class="section-title">Últimos Posts</h2>
-    <a href="/posts" class="view-all">
+    <a href="posts.html" class="view-all">
       Ver todos <i class="fas fa-arrow-right"></i>
     </a>
   </div>
@@ -562,7 +562,7 @@ html, body {
 </footer>
 
 <script>
-// Dados dos posts (em produção, viriam de uma API)
+// Dados dos posts (atualizados com links corretos)
 const postsData = [
   {
     id: 1,
@@ -571,7 +571,7 @@ const postsData = [
     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX9P2j2MjIjIzkO-yNB3HtENFWk2dp2DE_ripgV5okgFZcc5Al5czn3H61sGZfouOj6Lv0nV7nxMCbIRjz-Ye93NsOBsRrCgmOy10rQj7JjsIY64aLwAGw4skd-kTR9hlHYJzJzmofcav_ww9nlRWHwOjWhm51nWOPV4X4Jd6Vd_xQCO8H5GGVBxKrjp_P/s2100/poster.png",
     date: "2023-10-15",
     duration: "1h 30min",
-    link: "/post/lady-gaga",
+    link: "post/lady-gaga.html",
     action: "abrirPopupCBS"
   },
   {
@@ -581,7 +581,7 @@ const postsData = [
     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX_x5vkq65cDMXsp5-Mwdf9CvReUI9cKiJOEcuZplLmQktIVP2a-of9cUxrjz6H-mmlZjGx9Il9OhZRG4UtmdgnhpVv-opRoT9rXWTQcKOtdD45njyKSZAFHJjzFKixuFylSOIz12UbU-B6xdmQjcNzKrJmERnm9hsdiZSpmzsmUxt4fIdyRtBx38LYyJw/s2100/alltst.png",
     date: "2023-11-20",
     duration: "1h 45min",
-    link: "/posts/nba-louise.html",
+    link: "post/nba-louise.html",
     action: "irParaNbaLouise"
   },
   {
@@ -591,7 +591,7 @@ const postsData = [
     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9Q1J0fNN4g0_UbqgG7S-OldHmABwQ3VwIqrcL2bWvnC8uQvbM7r4Q7YuhAhzA9KZPJ9mm5CRK_-r9DshoafDUY7L_rJYhP7t6Qs6ZfU7SQyf-rDSrVllS3iC5f6z5B3Zhm2kRl3aLhXqg8QdpxAl2SDYX_HB1hUyE27Ys/s2100/taylor-swift-apple-music.jpg",
     date: "2023-09-10",
     duration: "2h 10min",
-    link: "/post/taylor-swift",
+    link: "post/taylor-swift.html",
     action: "abrirPost"
   },
   {
@@ -601,10 +601,13 @@ const postsData = [
     image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgKz-L-CfIk2z3Q_QOSAeICrUu7M0zALB-Q9Fob8ilWXW1y_26UePxxt9yI8_5C7MXz0HSvI9L7cC9uBf8T4IGVXmOFls9SfN_ndG8P1PSpVjBqJkKzrF9z2vMVyMsFw6W6gxT0S2RcR8u6mkwBkyFm7cxhWcS6v1_Q/s2100/morning-show-season3.jpg",
     date: "2023-11-05",
     duration: "50min/ep",
-    link: "/post/morning-show",
+    link: "post/morning-show.html",
     action: "abrirPost"
   }
 ];
+
+// URL para redirecionamento
+const NBA_LOUISE_URL = "post/nba-louise.html";
 
 // Função para renderizar posts
 function renderPosts() {
@@ -632,9 +635,6 @@ function renderPosts() {
   });
 }
 
-// URL para redirecionamento
-const NBA_LOUISE_URL = "/post/nba-louise";
-
 // Função para redirecionar para página NBA Louise
 function irParaNbaLouise() {
   window.location.href = NBA_LOUISE_URL;
@@ -653,18 +653,16 @@ function fecharPopup() {
 }
 
 function abrirPost() {
-  window.location.href = "/posts";
+  window.location.href = "posts.html";
 }
 
 function maisInfoLouise() {
   alert("Louise apresenta um show exclusivo no intervalo do NBA All-Star Game, com produção cinematográfica premium da Apple TV+.");
 }
 
-// Navegação do menu
+// Navegação do menu - removida a prevenção padrão para links normais funcionarem
 document.querySelectorAll('.apple-nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    
+  link.addEventListener('click', function() {
     // Remove classe active de todos
     document.querySelectorAll('.apple-nav a').forEach(item => {
       item.classList.remove('active');
@@ -672,12 +670,6 @@ document.querySelectorAll('.apple-nav a').forEach(link => {
     
     // Adiciona ao clicado
     this.classList.add('active');
-    
-    // Navegação SPA simples
-    const href = this.getAttribute('href');
-    if (href !== window.location.pathname) {
-      window.location.href = href;
-    }
   });
 });
 
@@ -686,9 +678,10 @@ document.addEventListener('DOMContentLoaded', () => {
   renderPosts();
   
   // Marcar link ativo baseado na URL atual
-  const currentPath = window.location.pathname;
+  const currentPage = window.location.pathname.split('/').pop();
   document.querySelectorAll('.apple-nav a').forEach(link => {
-    if (link.getAttribute('href') === currentPath) {
+    const linkPage = link.getAttribute('href');
+    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
       link.classList.add('active');
     }
   });
